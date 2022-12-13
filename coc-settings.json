@@ -1,0 +1,10 @@
+{
+  "html.filetypes": [
+    "html",
+    "handlebars",
+    "htmldjango",
+    "blade",
+    "php"
+  ],
+  "snippets.ultisnips.pythonPrompt": false
+}
