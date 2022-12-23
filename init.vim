@@ -38,6 +38,7 @@ set tabstop=4
 set updatetime=300
 set termguicolors
 let g:airline#extensions#tabline#enabled=0
+let g:airline_theme = "tokyonight"
 
 " Get lua config
 lua require('options')
