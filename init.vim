@@ -48,7 +48,7 @@ nnoremap <Space>p <cmd>tabprevious<CR>
 nnoremap <Space>n <cmd>tabnext<CR>
 nnoremap <Space>o <cmd>tabnew<CR>
 nnoremap <Space>f <cmd>Telescope find_files<CR>
-nnoremap <Space>s <cmd>w<CR>
+nnoremap <Space>s :call CocAction('format') <bar> :w<CR>
 nnoremap <Space>e <cmd>NvimTreeToggle<CR>
 inoremap <silent><expr> <tab> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<TAB>"
 inoremap <silent><expr> <cr> "\<c-g>u\<CR>"
