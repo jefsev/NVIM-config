@@ -53,12 +53,19 @@ nnoremap <Space>n <cmd>tabnext<CR>
 nnoremap <Space>o <cmd>tabnew<CR>
 nnoremap <Space>c <cmd>tabc<CR>
 nnoremap <Space>f <cmd>Telescope find_files<CR>
+nnoremap <Space>r <cmd>Telescope splitright<CR>
 nnoremap <Space>s :call CocAction('format') <bar> :w<CR>
 nnoremap <Space>e <cmd>NvimTreeToggle<CR>
 inoremap <silent><expr> <tab> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<TAB>"
 inoremap <silent><expr> <cr> "\<c-g>u\<CR>"
 nnoremap <Space>/ <cmd>ToggleTerm<CR>
+tnoremap <Space>/ <C-\><C-n><cmd>ToggleTerm<CR>
 nnoremap <Space>\ <cmd>CopilotChatToggle<CR>
+nnoremap <C-h> <C-w>h " Move to the left window
+nnoremap <C-j> <C-w>j " Move to the bottom window
+nnoremap <C-k> <C-w>k " Move to the top window
+nnoremap <C-l> <C-w>l " Move to the right window
+
 
 " Use <c-space> to trigger completion.
 if has('nvim')

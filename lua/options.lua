@@ -23,3 +23,16 @@ require("CopilotChat").setup({
     layout = 'float'
   }
 })
+
+require('telescope').setup{
+  defaults = {
+    mappings = {
+      i = {
+        ["<Space>r"] = require('telescope.actions').select_vertical,
+      },
+      n = {
+        ["<Space>r"] = require('telescope.actions').select_vertical,
+      },
+    },
+  }
+}
