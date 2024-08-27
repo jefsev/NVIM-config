@@ -2,14 +2,19 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 vim.opt.termguicolors = true
 
-require("tokyonight").setup({
-  transparent = true, -- Enable this to disable setting the background color
+require("catppuccin").setup({
+  flavor = "mocha",
+  integrations = {
+    nvimtree = true,
+    coc_nvim = true,
+    telescope = true,
+  },
 })
 
 -- empty setup using defaults
 require("nvim-tree").setup({
-    filters = {
-      dotfiles = true,
+  filters = {
+    dotfiles = true,
   },
 })
 
@@ -24,7 +29,7 @@ require("CopilotChat").setup({
   }
 })
 
-require('telescope').setup{
+require('telescope').setup {
   defaults = {
     mappings = {
       i = {

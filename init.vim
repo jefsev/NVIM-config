@@ -1,6 +1,6 @@
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 
-Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'sheerun/vim-polyglot'
 Plug 'jiangmiao/auto-pairs'
@@ -41,12 +41,13 @@ set tabstop=4
 set updatetime=300
 set termguicolors
 let g:airline#extensions#tabline#enabled=0
-let g:airline_theme = "tokyonight"
+let g:airline_theme = 'catppuccin'
 
 " Get lua config
 lua require('options')
+lua require('coc-config')
 
-colorscheme tokyonight-night
+colorscheme catppuccin-mocha
 
 nnoremap <Space>p <cmd>tabprevious<CR>
 nnoremap <Space>n <cmd>tabnext<CR>
