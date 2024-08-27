@@ -5,13 +5,16 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'sheerun/vim-polyglot'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-fugitive'
+Plug 'zbirenbaum/copilot.lua'
 Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+Plug 'CopilotC-Nvim/CopilotChat.nvim', { 'branch': 'canary' }
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.x' }
 Plug 'neovim/nvim-lspconfig'
 Plug 'vim-airline/vim-airline'
 Plug 'nvim-tree/nvim-web-devicons' " Recommended (for coloured icons)
 Plug 'nvim-tree/nvim-tree.lua'
-Plug 'akinsho/bufferline.nvim', { 'tag': 'v3.*' }
+Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
+Plug 'github/copilot.vim'
 
 call plug#end()
 
@@ -48,11 +51,14 @@ colorscheme tokyonight-night
 nnoremap <Space>p <cmd>tabprevious<CR>
 nnoremap <Space>n <cmd>tabnext<CR>
 nnoremap <Space>o <cmd>tabnew<CR>
+nnoremap <Space>c <cmd>tabc<CR>
 nnoremap <Space>f <cmd>Telescope find_files<CR>
 nnoremap <Space>s :call CocAction('format') <bar> :w<CR>
 nnoremap <Space>e <cmd>NvimTreeToggle<CR>
 inoremap <silent><expr> <tab> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<TAB>"
 inoremap <silent><expr> <cr> "\<c-g>u\<CR>"
+nnoremap <Space>/ <cmd>ToggleTerm<CR>
+nnoremap <Space>\ <cmd>CopilotChatToggle<CR>
 
 " Use <c-space> to trigger completion.
 if has('nvim')

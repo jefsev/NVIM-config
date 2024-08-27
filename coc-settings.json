@@ -4,7 +4,8 @@
     "handlebars",
     "htmldjango",
     "blade",
-    "php"
+    "php",
+    "vue"
   ],
   "snippets.ultisnips.pythonPrompt": false
 }
