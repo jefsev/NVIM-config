@@ -22,12 +22,18 @@ require("toggleterm").setup({
   direction = 'float',
 })
 
-require("CopilotChat").setup({
-  debug = true,
-  window = {
-    layout = 'float'
-  }
-})
+-- require("copilot").setup({
+--     suggestion = {
+--       enabled = false,
+--     },
+-- })
+--
+-- require("CopilotChat").setup({
+--   debug = true,
+--   window = {
+--     layout = 'float'
+--   }
+-- })
 
 require('telescope').setup {
   defaults = {
@@ -39,5 +45,10 @@ require('telescope').setup {
         ["<Space>r"] = require('telescope.actions').select_vertical,
       },
     },
+  },
+  pickers = {
+    find_files = {
+      hidden = true,
+    }
   }
 }

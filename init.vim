@@ -7,14 +7,15 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-fugitive'
 Plug 'zbirenbaum/copilot.lua'
 Plug 'nvim-lua/plenary.nvim'
-Plug 'CopilotC-Nvim/CopilotChat.nvim', { 'branch': 'canary' }
+"Plug 'CopilotC-Nvim/CopilotChat.nvim', { 'branch': 'canary' }
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.x' }
 Plug 'neovim/nvim-lspconfig'
 Plug 'vim-airline/vim-airline'
 Plug 'nvim-tree/nvim-web-devicons' " Recommended (for coloured icons)
 Plug 'nvim-tree/nvim-tree.lua'
 Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
-Plug 'github/copilot.vim'
+"Plug 'github/copilot.vim'
+Plug 'numToStr/Comment.nvim'
 
 call plug#end()
 
@@ -29,6 +30,7 @@ set inccommand=split " Show replacements in a split screen
 set mouse=a " Allow to use the mouse in the editor
 set number " Shows the line numbers
 set relativenumber
+set scrolloff=999
 set splitbelow splitright " Change the split screen behavior
 set title " Show file title
 set wildmenu " Show a more advance menu
@@ -74,3 +76,88 @@ if has('nvim')
 else
   inoremap <silent><expr> <c-@> coc#refresh()
 endif
+
+function! AdjustEndOfBuffer()
+    " Check if the buffer is empty or has only one empty line
+    if line('$') == 1 && getline(1) == ''
+        return
+    endif
+
+    " Calculate how many lines we need to add to keep the cursor centered
+    let needed_lines = winheight(0) - (line('$') - line('.'))
+    if needed_lines > 0
+        " Only add lines if needed and the buffer is not empty
+        call append(line('$'), repeat([''], needed_lines))
+        " Keep the buffer unmodified
+        set nomodified
+    endif
+endfunction
+
+augroup KeepCursorCentered
+    autocmd!
+    autocmd BufEnter,WinEnter,VimResized,CursorMoved * call AdjustEndOfBuffer()
+augroup END
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
