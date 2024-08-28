@@ -45,10 +45,16 @@ vim.api.nvim_set_keymap('n', '<Space>s', '<cmd>lua vim.lsp.buf.formatting()<CR>'
 vim.api.nvim_set_keymap('n', '<Space>e', '<cmd>NvimTreeToggle<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('i', '<silent><expr> <tab>', 'pumvisible() ? "<C-n>" : "<Tab>"', { noremap = true, silent = true, expr = true })
 vim.api.nvim_set_keymap('i', '<silent><expr> <cr>', 'pumvisible() ? "<C-y>" : "<CR>"', { noremap = true, silent = true, expr = true })
-vim.api.nvim_set_keymap('n', '<Space>/', '<cmd>ToggleTerm<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('t', '<Space>/', '<C-\\><C-n><cmd>ToggleTerm<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Space>\\', '<cmd>CopilotChatToggle<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<C-h>', '<C-w>h', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<C-j>', '<C-w>j', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<C-k>', '<C-w>k', { noremap = true, silent = true })
 
+-- ToggleTerm keymapping
+for i = 1, 9 do
+  vim.api.nvim_set_keymap('n', '<Space>/' .. i, '<cmd>ToggleTerm ' .. i .. '<CR>', { noremap = true, silent = true })
+end
+
+vim.api.nvim_set_keymap('n', '<Space>/', '<cmd>ToggleTerm<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('t', '<Space>/', '<C-\\><C-n><cmd>ToggleTerm<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Space>/a', '<cmd>ToggleTermToggleAll<CR>', { noremap = true, silent = true })
