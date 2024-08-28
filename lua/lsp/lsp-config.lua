@@ -23,7 +23,7 @@ local lspconfig = require('lspconfig')
 
 local on_attach = function(client, bufnr)
     -- Your keybindings for LSP here
-    local opts = { noremap = true, silent = true, buffer = bufnr }
+    local opts = { noremap = true, silent = true }
     vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Space>s', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
     -- More keybinds for LSP...
 end
