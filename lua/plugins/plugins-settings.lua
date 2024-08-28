@@ -1,9 +1,6 @@
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-vim.opt.termguicolors = true
-
 require("catppuccin").setup({
   flavor = "mocha",
+  transparent_background = true,
   integrations = {
     nvimtree = true,
     coc_nvim = true,
@@ -11,7 +8,9 @@ require("catppuccin").setup({
   },
 })
 
--- empty setup using defaults
+vim.g.airline_theme = 'catppuccin'
+vim.cmd('colorscheme catppuccin-mocha')
+
 require("nvim-tree").setup({
   filters = {
     dotfiles = true,
@@ -52,3 +51,27 @@ require('telescope').setup {
     }
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
