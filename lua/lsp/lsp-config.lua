@@ -82,7 +82,7 @@ lspconfig.tailwindcss.setup {
 -- HTML, HTMX, and other related technologies (using Emmet)
 lspconfig.emmet_ls.setup {
     on_attach = on_attach,
-    filetypes = { 'html', 'css', 'javascript', 'typescript', 'htmx' },
+    filetypes = { 'html', 'css', 'javascript', 'typescript', 'htmx', 'vue' },
     capabilities = capabilities
 }
 

@@ -25,7 +25,7 @@ return require('packer').startup(function(use)
 
     -- Telescope with plenary as a dependency
     use {
-      'nvim-telescope/telescope.nvim', 
+      'nvim-telescope/telescope.nvim',
       tag = '0.1.8',
       requires = { {'nvim-lua/plenary.nvim'} }
     }
@@ -41,8 +41,6 @@ return require('packer').startup(function(use)
 	use 'nvim-neotest/nvim-nio'
 	use 'jay-babu/mason-nvim-dap.nvim'
 
-    -- Formatting plugins
-    use 'mhartington/formatter.nvim'
 
     -- Utility plugins
     use 'numToStr/Comment.nvim'
@@ -57,6 +55,12 @@ return require('packer').startup(function(use)
     use 'hrsh7th/cmp-cmdline'
     use 'hrsh7th/nvim-cmp'
     use 'hrsh7th/vim-vsnip'
+
+    -- Treesitter
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        build = ':TSUpdate',
+    }
 
     if packer_bootstrap then
         require('packer').sync()
