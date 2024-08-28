@@ -35,12 +35,13 @@ vim.g.loaded_netrwPlugin = 1
 vim.opt.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+
 vim.api.nvim_set_keymap('n', '<Space>p', '<cmd>tabprevious<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Space>n', '<cmd>tabnext<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Space>o', '<cmd>tabnew<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Space>c', '<cmd>tabc<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<Space>f', '<cmd>Telescope find_files<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<Space>r', '<cmd>Telescope splitright<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Space>s', '<cmd>lua vim.lsp.buf.formatting()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Space>e', '<cmd>NvimTreeToggle<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('i', '<silent><expr> <tab>', 'pumvisible() ? "<C-n>" : "<Tab>"', { noremap = true, silent = true, expr = true })
@@ -50,11 +51,16 @@ vim.api.nvim_set_keymap('n', '<C-h>', '<C-w>h', { noremap = true, silent = true 
 vim.api.nvim_set_keymap('n', '<C-j>', '<C-w>j', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<C-k>', '<C-w>k', { noremap = true, silent = true })
 
--- ToggleTerm keymapping
-for i = 1, 9 do
-  vim.api.nvim_set_keymap('n', '<Space>/' .. i, '<cmd>ToggleTerm ' .. i .. '<CR>', { noremap = true, silent = true })
-end
+-- Telescope kemapping
+vim.api.nvim_set_keymap('n', '<Space>u', '<cmd>Telescope lsp_references<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Space>f', '<cmd>Telescope find_files<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Space>r', '<cmd>Telescope splitright<CR>', { noremap = true, silent = true })
 
+-- ToggleTerm keymapping
+vim.api.nvim_set_keymap('n', '<Space>/1', '<cmd>ToggleTerm 1<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Space>/2', '<cmd>ToggleTerm 2<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Space>/3', '<cmd>ToggleTerm 3<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Space>/4', '<cmd>ToggleTerm 4<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Space>/', '<cmd>ToggleTerm<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('t', '<Space>/', '<C-\\><C-n><cmd>ToggleTerm<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Space>/a', '<cmd>ToggleTermToggleAll<CR>', { noremap = true, silent = true })

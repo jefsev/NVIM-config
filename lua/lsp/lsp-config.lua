@@ -1,3 +1,6 @@
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
+
 -- Mason setup
 require('mason').setup()
 
@@ -10,7 +13,6 @@ require('mason-lspconfig').setup({
         "gopls",          -- Go
         "rust_analyzer",  -- Rust
         "phpactor",       -- PHP
-        "intelephense",   -- Another popular PHP LSP
         "volar",          -- Vue
         "tailwindcss",    -- Tailwind CSS
         "emmet_ls",       -- For HTML including HTMX
@@ -31,58 +33,63 @@ end
 -- Lua LSP
 lspconfig.lua_ls.setup {
     on_attach = on_attach,
+    capabilities = capabilities
 }
 
 -- Pyright LSP
 lspconfig.pyright.setup {
     on_attach = on_attach,
+    capabilities = capabilities 
 }
 
 -- TSServer LSP (JavaScript/TypeScript)
 lspconfig.tsserver.setup {
     on_attach = on_attach,
+    capabilities = capabilities
 }
 
 -- Go LSP
 lspconfig.gopls.setup {
     on_attach = on_attach,
+    capabilities = capabilities
 }
 
 -- Rust LSP
 lspconfig.rust_analyzer.setup {
     on_attach = on_attach,
+    capabilities = capabilities
 }
 
 -- PHP LSP (phpactor)
 lspconfig.phpactor.setup {
     on_attach = on_attach,
-}
-
--- PHP LSP (Intelephense) - optional, can be used instead of or alongside phpactor
-lspconfig.intelephense.setup {
-    on_attach = on_attach,
+    capabilities = capabilities
 }
 
 -- Vue.js LSP
 lspconfig.volar.setup {
     on_attach = on_attach,
     filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' },
+    capabilities = capabilities
 }
 
 -- Tailwind CSS LSP
 lspconfig.tailwindcss.setup {
     on_attach = on_attach,
+    capabilities = capabilities
 }
 
 -- HTML, HTMX, and other related technologies (using Emmet)
 lspconfig.emmet_ls.setup {
     on_attach = on_attach,
     filetypes = { 'html', 'css', 'javascript', 'typescript', 'htmx' },
+    capabilities = capabilities
 }
 
 -- MySQL (SQL Language Server)
 lspconfig.sqlls.setup {
     on_attach = on_attach,
+    capabilities = capabilities
 }
 
 
