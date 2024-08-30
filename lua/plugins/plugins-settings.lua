@@ -1,22 +1,18 @@
-require("catppuccin").setup({
-  flavor = "mocha",
-  transparent_background = true,
-  integrations = {
-    nvimtree = true,
-    coc_nvim = true,
-    telescope = true,
-  },
+require("flow").setup({
+  transparent = true,
+  fluo_color = "pink",
+  mode = "bright",
 })
 
-vim.g.airline_theme = 'catppuccin'
-vim.cmd('colorscheme catppuccin-mocha')
+vim.g.airline_theme = 'flow'
+vim.cmd("colorscheme flow")
 
 require("nvim-tree").setup({
   filters = {
     dotfiles = true,
   },
   view = {
-    side = 'right',
+    side = 'left',
   }
 })
 
@@ -55,6 +51,19 @@ require('telescope').setup {
   }
 }
 
+-- Rip-substitute
+require("rip-substitute").setup {
+	popupWin = {
+		title = " Replace",
+		border = "double",
+		matchCountHlGroup = "Keyword",
+		noMatchHlGroup = "ErrorMsg",
+		hideSearchReplaceLabels = false,
+		---@type "top"|"bottom"
+		position = "top",
+	},
+  }
+
 -- nvim-cmp setup
 local cmp = require'cmp'
 
@@ -84,6 +93,7 @@ cmp.setup({
     ['<Tab>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
   }),
   sources = cmp.config.sources({
+    { name = "copilot", group_index = 2 },
     { name = 'nvim_lsp' },
     { name = 'vsnip' }, -- For vsnip users.
     -- { name = 'luasnip' }, -- For luasnip users.
@@ -168,8 +178,10 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 
-
-
+require("copilot").setup({
+  suggestion = { enabled = false },
+  panel = { enabled = false },
+})
 
 
 

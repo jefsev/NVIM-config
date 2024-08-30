@@ -8,7 +8,6 @@ vim.opt.clipboard = 'unnamedplus'
 vim.opt.completeopt = { 'noinsert', 'menuone', 'noselect' }
 vim.opt.cursorline = true
 vim.opt.hidden = true
-vim.opt.autoindent = true
 vim.opt.inccommand = 'split'
 vim.opt.mouse = 'a'
 vim.opt.number = true
@@ -64,3 +63,11 @@ vim.api.nvim_set_keymap('n', '<Space>/4', '<cmd>ToggleTerm 4<CR>', { noremap = t
 vim.api.nvim_set_keymap('n', '<Space>/', '<cmd>ToggleTerm<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('t', '<Space>/', '<C-\\><C-n><cmd>ToggleTerm<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Space>/a', '<cmd>ToggleTermToggleAll<CR>', { noremap = true, silent = true })
+
+-- Rip-substitute keymapping
+vim.keymap.set(
+	{ "n", "x" },
+	"<Space>r",
+	function() require("rip-substitute").sub() end,
+	{ desc = " rip substitute" }
+)

@@ -17,7 +17,7 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
     -- UI plugins
-    use { 'catppuccin/nvim', as = 'catppuccin' }
+    use '0xstepit/flow.nvim'
     use 'nvim-tree/nvim-web-devicons'
     use 'nvim-tree/nvim-tree.lua'
     use 'vim-airline/vim-airline'
@@ -55,11 +55,24 @@ return require('packer').startup(function(use)
     use 'hrsh7th/cmp-cmdline'
     use 'hrsh7th/nvim-cmp'
     use 'hrsh7th/vim-vsnip'
+    use { "zbirenbaum/copilot.lua" }
+
+    use {
+      "zbirenbaum/copilot-cmp",
+      after = { "copilot.lua" },
+      config = function ()
+        require("copilot_cmp").setup()
+      end
+    }
 
     -- Treesitter
     use {
         'nvim-treesitter/nvim-treesitter',
         build = ':TSUpdate',
+    }
+
+    use {
+	    "chrisgrieser/nvim-rip-substitute",
     }
 
     if packer_bootstrap then
