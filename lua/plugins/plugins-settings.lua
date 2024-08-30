@@ -187,7 +187,13 @@ require("copilot").setup({
 })
 
 
-
+require("CopilotChat").setup({
+  debug = true,
+  window = {
+    layout = 'float',
+    border = 'single'
+  }
+})
 
 
 

@@ -47,6 +47,10 @@ return require('packer').startup(function(use)
     use 'tpope/vim-fugitive'
     use 'jiangmiao/auto-pairs'
     use 'sheerun/vim-polyglot'
+    use 'pocco81/auto-save.nvim'
+    use {
+        "chrisgrieser/nvim-rip-substitute",
+    }
 
     -- Autocomplete
     use 'hrsh7th/cmp-nvim-lsp'
@@ -74,6 +78,12 @@ return require('packer').startup(function(use)
     use {
 	    "chrisgrieser/nvim-rip-substitute",
     }
+
+    use {
+        "CopilotC-Nvim/CopilotChat.nvim",
+        branch = "canary",
+    }
+
 
     if packer_bootstrap then
         require('packer').sync()

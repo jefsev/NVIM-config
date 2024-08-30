@@ -52,7 +52,9 @@ vim.api.nvim_set_keymap('n', '<C-k>', '<C-w>k', { noremap = true, silent = true 
 
 -- Telescope kemapping
 vim.api.nvim_set_keymap('n', '<Space>u', '<cmd>Telescope lsp_references<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<Space>f', '<cmd>Telescope find_files<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Space>ff', '<cmd>Telescope find_files<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Space>fg', '<cmd>Telescope find_files<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Space>fb', '<cmd>Telescope find_files<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Space>r', '<cmd>Telescope splitright<CR>', { noremap = true, silent = true })
 
 -- ToggleTerm keymapping
