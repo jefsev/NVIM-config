@@ -1,11 +1,8 @@
-require('settings.settings')
 require('plugins.plugins')
 require('plugins.plugins-settings')
+require('settings.settings')
 require('lsp.lsp-config')
 require('lsp.debug')
-
-
-
 
 
 

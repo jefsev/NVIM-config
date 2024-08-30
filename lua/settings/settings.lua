@@ -17,7 +17,7 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.title = true
 vim.opt.wildmenu = true
-vim.cmd('filetype plugin indent on')
+--vim.cmd('filetype plugin indent on')
 vim.cmd('syntax on')
 vim.opt.spell = true
 vim.opt.ttyfast = true
@@ -50,11 +50,11 @@ vim.api.nvim_set_keymap('n', '<C-h>', '<C-w>h', { noremap = true, silent = true 
 vim.api.nvim_set_keymap('n', '<C-j>', '<C-w>j', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<C-k>', '<C-w>k', { noremap = true, silent = true })
 
--- Telescope kemapping
+-- Telescope keymapping
 vim.api.nvim_set_keymap('n', '<Space>u', '<cmd>Telescope lsp_references<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Space>ff', '<cmd>Telescope find_files<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<Space>fg', '<cmd>Telescope find_files<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<Space>fb', '<cmd>Telescope find_files<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Space>fg', '<cmd>Telescope live_grep<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Space>fb', '<cmd>Telescope buffers<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Space>r', '<cmd>Telescope splitright<CR>', { noremap = true, silent = true })
 
 -- ToggleTerm keymapping

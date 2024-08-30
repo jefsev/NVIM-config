@@ -1,7 +1,7 @@
 require("flow").setup({
   transparent = true,
   fluo_color = "pink",
-  mode = "bright",
+  mode = "normal",
 })
 
 vim.g.airline_theme = 'flow'
@@ -9,10 +9,14 @@ vim.cmd("colorscheme flow")
 
 require("nvim-tree").setup({
   filters = {
-    dotfiles = true,
+    dotfiles = false,
   },
   view = {
     side = 'left',
+  },
+  git = {
+    enable = true,
+    ignore = false,
   }
 })
 
