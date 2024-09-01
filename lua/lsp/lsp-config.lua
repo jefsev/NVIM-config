@@ -82,8 +82,15 @@ lspconfig.tailwindcss.setup {
 -- HTML, HTMX, and other related technologies (using Emmet)
 lspconfig.emmet_ls.setup {
     on_attach = on_attach,
-    filetypes = { 'html', 'css', 'javascript', 'typescript', 'htmx', 'vue' },
-    capabilities = capabilities
+    filetypes = { 'html', 'css', 'javascript', 'typescript', 'htmx', 'vue', 'sass', 'scss', 'javascriptreact', 'typescriptreact' },
+    capabilities = capabilities,
+    init_options = {
+        html = {
+            options = {
+                ["bem.enabled"] = true,
+            }
+        }
+    }
 }
 
 -- MySQL (SQL Language Server)
